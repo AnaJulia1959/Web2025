@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head></head>
+
+<body>
+    <th:block th:include="professor/mensagens"></th:block>
+
+    <div th:each="professor: ${professores}">
+        <p th:text="${professor.nome}"></p>
+        <p th:text="${professor.email}"></p>
+        <a th:href="@{/professor/editar/{id}(id=${professor.ID})}">Editar</a>
+        <a th:href="@{/professor/excluir/{id}(id=${professor.ID})}">Excluir</a>
+    </div>
+</body>
+
+</html>
