@@ -1,0 +1,13 @@
+<html xlms:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+	<th:block th:include="categoria/mensagens"></th:block>
+
+	<div th:each="categoria: ${categorias}">
+		<p th:text="${categoria.nome}"></p>
+		<a th:href="@{/categoria/editar/{id}(id=${categoria.ID})}">Editar</a>
+		<a th:href="@{/categoria/excluir/{id}(id=${categoria.ID})}">Excluir</a>
+
+	</div>
+</body>
+</html>
