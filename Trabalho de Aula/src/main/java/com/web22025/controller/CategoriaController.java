@@ -97,6 +97,8 @@ public class CategoriaController {
 		return "redirect:/categoria/listar";
 	}
 
+
+	@Controller
 	@RequestMapping("/professor")
 	public class ProfessorController {
     @Autowired
