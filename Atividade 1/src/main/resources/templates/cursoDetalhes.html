@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Curso</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Sistema de Cursos</a>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 th:text="${curso.nome}"></h2>
+        <p th:text="${curso.descricao}"></p>
+        <img th:src="@{${curso.imagem}}" alt="Imagem do Curso" width="300">
+        <a href="/" class="btn btn-secondary mt-3">Voltar</a>
+    </div>
+</body>
+</html>

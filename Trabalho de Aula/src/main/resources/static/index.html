@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Sistema de Cursos</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/categorias">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/professores">Professores</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Bem-vindo ao Sistema de Cursos</h1>
+        <form action="/buscar" method="get">
+            <input type="text" name="nome" class="form-control" placeholder="Buscar curso...">
+            <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+        </form>
+
+        <h3>Categorias</h3>
+        <ul class="list-group">
+            <li class="list-group-item" th:each="categoria : ${categorias}">
+                <a th:href="@{/cursos/{id}(id=${categoria.id})}" th:text="${categoria.nome}"></a>
+            </li>
+        </ul>
+
+        <h3>Cursos Encontrados</h3>
+        <ul class="list-group mt-3">
+            <li class="list-group-item" th:each="curso : ${cursos}">
+                <a th:href="@{/curso/{id}(id=${curso.id})}" th:text="${curso.nome}"></a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

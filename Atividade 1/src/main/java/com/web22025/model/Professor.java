@@ -4,16 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name="categoria")
-public class Categoria {
+public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String descricao;
+    private String especialidade;
 
     public Long getId() {
         return id;
@@ -31,13 +29,13 @@ public class Categoria {
         this.nome = nome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getEspecialidade() {
+        return especialidade;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
 
-    
+
 }
